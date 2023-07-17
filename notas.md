@@ -11,3 +11,9 @@ Al momento de ejecutar "node src/app.js" nos sale un error de que node no recono
 
 ## MONGOOSE: $ npm i mongoose
 > Es un modulo que permite conectarte a mongodb, pero también nos permite validar los datos antes de que sean guardados
+
+## BYCRIPTJS: $ npm i bcryptjs
+> Permitirá hashear las contraseas en cadenas largas para mentenerlas ocultas
+
+## JSON WEB TOKEN: $ npm i jsonwebtoken
+> Permitirá generar un token que permitirá validar si un usuario ya fue registrado
