@@ -8,3 +8,6 @@ Al momento de ejecutar "node src/app.js" nos sale un error de que node no recono
 
 ## INSTALL MORGAN: $ npm i morgan
 > Permite visualizar por consola las peticiones que llegan al backend
+
+## MONGOOSE: $ npm i mongoose
+> Es un modulo que permite conectarte a mongodb, pero también nos permite validar los datos antes de que sean guardados
