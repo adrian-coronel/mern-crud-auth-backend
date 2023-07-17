@@ -7,6 +7,7 @@ import authRoutes from './routes/auth.routes.js'
 const app = express()
 
 app.use(morgan('dev')) // morgan mostrará mensaje corto por consola
-app.use(authRoutes)
+app.use(express.json()) // permito que express entienda JSON
+app.use('/api',authRoutes) // nuestras rutas comenzarán por '/api'
 
 export default app
