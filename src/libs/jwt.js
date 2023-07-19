@@ -6,7 +6,7 @@ export function createAccessToken(payload){
   return new Promise((resolve, reject) => {
     jwt.sign(
       payload, // objeto/cadena con los datos
-      TOKEN_SECRET, // clave secreta para cifrar/descifrar el token
+      TOKEN_SECRET, // clave secreta para cifrar/descifrar(FIRMA) el token
       { // Opciones
         expiresIn: "1d"
       },
