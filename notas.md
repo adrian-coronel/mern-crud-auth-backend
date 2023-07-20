@@ -23,3 +23,7 @@ Al momento de ejecutar "node src/app.js" nos sale un error de que node no recono
 
 ## COOKIE-PARSER: $ npm i cookie-parser
 > Nos permite añadir un middleware que cada vez que llegue una cookie lo convertirá en objeto JSON
+
+## ZOD: $ npm i zod
+> https://zod.dev/
+> Zod es una biblioteca de declaración y validación de esquemas de TypeScript. Estoy usando el término "esquema" para referirme ampliamente a cualquier tipo de datos, desde un stringobjeto anidado simple hasta uno complejo. (POR EJEMPLO, VALIDARÁ SI UN OBJETO LLEGA CON UN CAMPO EMAIÑ/PASSWORD, EL TIPO DE DATO, UN MAXIMO/MINIMO)

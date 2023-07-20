@@ -1,5 +1,7 @@
 import { Router } from "express";
 import { authRequired } from "../middlewares/validateToken.js";
+import { validateSchema } from "../middlewares/validator.middleware.js";
+import { createTaskSchema } from "../schemas/task.schema.js";
 import { 
   getTasks,
   getTask,
@@ -12,7 +14,12 @@ const router = Router()
 
 router.get('/tasks', authRequired, getTasks);
 router.get('/tasks/:id', authRequired, getTask);
-router.post('/tasks', authRequired, createTask);
+router.post(
+  '/tasks', 
+  authRequired, // Se valida si esta authenticado
+  validateSchema(createTaskSchema), // Se valida la estructura de datos
+  createTask // Se crea la tarea
+);
 router.put('/tasks/:id', authRequired, updateTask);
 router.delete('/tasks/:id', authRequired, deleteTask);
 
