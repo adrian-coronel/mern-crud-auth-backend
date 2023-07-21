@@ -26,4 +26,7 @@ Al momento de ejecutar "node src/app.js" nos sale un error de que node no recono
 
 ## ZOD: $ npm i zod
 > https://zod.dev/
-> Zod es una biblioteca de declaración y validación de esquemas de TypeScript. Estoy usando el término "esquema" para referirme ampliamente a cualquier tipo de datos, desde un stringobjeto anidado simple hasta uno complejo. (POR EJEMPLO, VALIDARÁ SI UN OBJETO LLEGA CON UN CAMPO EMAIÑ/PASSWORD, EL TIPO DE DATO, UN MAXIMO/MINIMO)
+> Zod es una biblioteca de declaración y validación de esquemas de TypeScript. Estoy usando el término "esquema" para referirme ampliamente a cualquier tipo de datos, desde un stringobjeto anidado simple hasta uno complejo. (POR EJEMPLO, VALIDARÁ SI UN OBJETO LLEGA CON UN CAMPO EMAIL/PASSWORD, EL TIPO DE DATO, UN MAXIMO/MINIMO)
+
+## CORS: $ npm i cors
+> Cors(Access-Control-Allow-Origin) es un mecanismo o política de seguridad que permite controlar las peticiones HTTP asíncronas que se pueden realizar desde un navegador a un servidor con un dominio diferente de la página cargada originalmente.

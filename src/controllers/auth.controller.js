@@ -8,6 +8,10 @@ export const register = async (req, res) => {
   const {email,password, username} = req.body
 
   try {
+    // Validamos si el usuario(email) ya existe
+    const userFound = await User.findOne({email});
+    if(userFound) return res.status(400).json(['The email already in use'])
+
     // Genera asincrónicamente un hash para la cadena dada.
     const passwordHash = await bcrypt.hash(password,10)
 
