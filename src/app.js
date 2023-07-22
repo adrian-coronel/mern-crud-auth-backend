@@ -11,7 +11,8 @@ import tasksRoutes from './routes/tasks.routes.js'
 const app = express()
 
 app.use(cors({ // Permito solicitudes solo de este dominio
-  origin: 'http://localhost:5173'
+  origin: 'http://localhost:5173',
+  credentials: true,
 }));
 app.use(morgan('dev')) // morgan mostrará mensaje corto por consola
 app.use(express.json()) // permito que express entienda JSON
