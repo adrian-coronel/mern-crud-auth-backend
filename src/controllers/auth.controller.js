@@ -2,6 +2,8 @@
 import User from '../models/user.model.js'
 import bcrypt from 'bcryptjs'
 import {createAccessToken} from '../libs/jwt.js'
+import jwt from 'jsonwebtoken'
+import { TOKEN_SECRET } from '../config.js';
 
 
 export const register = async (req, res) => {
@@ -94,5 +96,28 @@ export const profile = async (req, res) => {
     email: userFound.email,
     createdAt: userFound.createdAt,
     updatedAt: userFound.updatedAt,
+  })
+}
+
+export const verifyToken = async (req, res) => {
+  // El usuario enviará su token para comprobar que esta authentificado
+  const { token } = req.cookies
+
+  if (!token) return res.status(401).json({message: 'Unauthorized'})
+
+  // Verificamos el token usando la firma(clave secreta) lo que retorna un callback con el user o un error
+  jwt.verify(token, TOKEN_SECRET, async (err, user) => {
+    if(err) return res.status(401).json({message: 'Unauthorized'});
+
+    const userFound = await User.findById(user.id)
+
+    // En caso el token fue valido, pero no se encontro el usuario
+    if (!userFound) return res.status(401).json({message: 'Unauthorized'});
+
+    return res.json({
+      id: userFound.id,
+      username: userFound.username,
+      email: userFound.email,
+    })
   })
 }
